@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.google.firebase.codelab.friendlychat"
+    namespace = "com.group38.gvchat"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.google.firebase.codelab.friendlychat"
+        applicationId = "com.group38.gvchat"
         minSdk = 24
         targetSdk = 37
         versionCode = 1
@@ -60,10 +60,10 @@ dependencies {
     implementation("androidx.core:core-ktx:1.19.1")
 
     // Google
-    implementation("com.google.android.gms:play-services-auth:22.0.0")
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
 
     // Firebase
-    implementation(platform("com.google.firebase:firebase-bom:35.0.2"))
+    implementation(platform("com.google.firebase:firebase-bom:35.1.0"))
     implementation("com.google.firebase:firebase-database")
     implementation("com.google.firebase:firebase-storage")
     implementation("com.google.firebase:firebase-auth")

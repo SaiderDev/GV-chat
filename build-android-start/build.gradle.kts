@@ -1,9 +1,11 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
-    id("com.android.application") version "9.4.1" apply false
-    id("com.android.library") version "9.4.1" apply false
-    id("org.jetbrains.kotlin.android") version "2.4.21" apply false
-    id("com.google.gms.google-services") version "4.5.0" apply false
+    id("com.android.application") version "8.13.2" apply false
+    id("com.android.library") version "8.13.2" apply false
+    id("org.jetbrains.kotlin.android") version "1.8.20" apply false
+
+    // The google-services plugin is required to parse the google-services.json file
+    id("com.google.gms.google-services") version "4.3.15" apply false
 }
 
 allprojects {

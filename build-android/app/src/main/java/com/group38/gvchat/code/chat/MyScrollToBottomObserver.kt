@@ -13,17 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.firebase.codelab.friendlychat
+package com.group38.gvchat.code.chat
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.AdapterDataObserver
 
 class MyScrollToBottomObserver(
     private val recycler: RecyclerView,
     private val adapter: FriendlyMessageAdapter,
     private val manager: LinearLayoutManager
-) : AdapterDataObserver() {
+) : androidx.recyclerview.widget.RecyclerView.AdapterDataObserver() {
     override fun onItemRangeInserted(positionStart: Int, itemCount: Int) {
         super.onItemRangeInserted(positionStart, itemCount)
         val count = adapter.itemCount

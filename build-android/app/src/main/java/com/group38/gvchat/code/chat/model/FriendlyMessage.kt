@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.firebase.codelab.friendlychat.model
+package com.group38.gvchat.code.chat.model
 
 data class FriendlyMessage(
     val text: String? = null,

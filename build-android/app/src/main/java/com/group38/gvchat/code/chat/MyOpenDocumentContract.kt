@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.firebase.codelab.friendlychat
+package com.group38.gvchat.code.chat
 
 import android.content.Context
 import android.content.Intent

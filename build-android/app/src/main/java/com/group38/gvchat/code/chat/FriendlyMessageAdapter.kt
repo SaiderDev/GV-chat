@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.firebase.codelab.friendlychat
+package com.group38.gvchat.code.chat
 
 import android.graphics.Color
 import android.util.Log
@@ -24,12 +24,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView.*
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
-import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
-import com.google.firebase.codelab.friendlychat.MainActivity.Companion.ANONYMOUS
-import com.google.firebase.codelab.friendlychat.databinding.ImageMessageBinding
-import com.google.firebase.codelab.friendlychat.databinding.MessageBinding
-import com.google.firebase.codelab.friendlychat.model.FriendlyMessage
+import com.group38.gvchat.code.chat.MainActivity.Companion.ANONYMOUS
+import com.group38.gvchat.R
+import com.group38.gvchat.databinding.ImageMessageBinding
+import com.group38.gvchat.databinding.MessageBinding
+import com.group38.gvchat.code.chat.model.FriendlyMessage
 import com.google.firebase.Firebase
 import com.google.firebase.storage.storage
 
@@ -38,7 +38,7 @@ import com.google.firebase.storage.storage
 class FriendlyMessageAdapter(
     private val options: FirebaseRecyclerOptions<FriendlyMessage>,
     private val currentUserName: String?
-) : FirebaseRecyclerAdapter<FriendlyMessage, ViewHolder>(options) {
+) : com.firebase.ui.database.FirebaseRecyclerAdapter<FriendlyMessage, ViewHolder>(options) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -65,7 +65,7 @@ class FriendlyMessageAdapter(
         return if (options.snapshots[position].text != null) VIEW_TYPE_TEXT else VIEW_TYPE_IMAGE
     }
 
-    inner class MessageViewHolder(private val binding: MessageBinding) : ViewHolder(binding.root) {
+    inner class MessageViewHolder(private val binding: MessageBinding) : androidx.recyclerview.widget.RecyclerView.ViewHolder(binding.root) {
         fun bind(item: FriendlyMessage) {
             binding.messageTextView.text = item.text
             setTextColor(item.name, binding.messageTextView)
@@ -90,7 +90,7 @@ class FriendlyMessageAdapter(
     }
 
     inner class ImageMessageViewHolder(private val binding: ImageMessageBinding) :
-        ViewHolder(binding.root) {
+        androidx.recyclerview.widget.RecyclerView.ViewHolder(binding.root) {
         fun bind(item: FriendlyMessage) {
             loadImageIntoView(binding.messageImageView, item.imageUrl!!, false)
 

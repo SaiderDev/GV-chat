@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.firebase.codelab.friendlychat
+package com.group38.gvchat.code.chat
 
 import android.text.Editable
 import android.text.TextWatcher
-import android.widget.Button
 import android.widget.ImageView
+import com.group38.gvchat.R
 
 class MyButtonObserver(private val button: ImageView) : TextWatcher {
     override fun onTextChanged(charSequence: CharSequence, start: Int, count: Int, after: Int) {

@@ -13,25 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.firebase.codelab.friendlychat
+package com.group38.gvchat.code.chat
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
-import androidx.appcompat.app.AppCompatActivity
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
-import com.firebase.ui.auth.IdpResponse
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
-import com.google.firebase.codelab.friendlychat.databinding.ActivitySignInBinding
+import com.group38.gvchat.R
+import com.group38.gvchat.databinding.ActivitySignInBinding
 import com.google.firebase.Firebase
 
 
-class SignInActivity : AppCompatActivity() {
+class SignInActivity : androidx.appcompat.app.AppCompatActivity() {
     private lateinit var binding: ActivitySignInBinding
 
     private val signIn: ActivityResultLauncher<Intent> =
@@ -52,8 +50,6 @@ class SignInActivity : AppCompatActivity() {
         // If there is no signed in user, launch FirebaseUI
         // Otherwise head to MainActivity
         if (Firebase.auth.currentUser == null) {
-            // Sign in with FirebaseUI, see docs for more details:
-            // https://firebase.google.com/docs/auth/android/firebaseui
             val signInIntent = AuthUI.getInstance()
                     .createSignInIntentBuilder()
                     .setLogo(R.mipmap.ic_launcher)

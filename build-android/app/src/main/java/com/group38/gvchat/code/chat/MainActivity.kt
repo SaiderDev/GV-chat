@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.firebase.codelab.friendlychat
+package com.group38.gvchat.code.chat
 
 import android.content.Intent
 import android.net.Uri
@@ -22,14 +22,14 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ProgressBar
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
-import com.google.firebase.codelab.friendlychat.databinding.ActivityMainBinding
-import com.google.firebase.codelab.friendlychat.model.FriendlyMessage
+import com.group38.gvchat.R
+import com.group38.gvchat.databinding.ActivityMainBinding
+import com.group38.gvchat.code.chat.model.FriendlyMessage
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.database
@@ -38,7 +38,7 @@ import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.storage
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : androidx.appcompat.app.AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var manager: LinearLayoutManager
 
@@ -63,11 +63,11 @@ class MainActivity : AppCompatActivity() {
         // "10.0.2.2" is a special value which allows the Android emulator to
         // connect to "localhost" on the host computer. The port values are
         // defined in the firebase.json file.
-        if (BuildConfig.DEBUG) {
-            Firebase.database.useEmulator("10.0.2.2", 9000)
-            Firebase.auth.useEmulator("10.0.2.2", 9099)
-            Firebase.storage.useEmulator("10.0.2.2", 9199)
-        }
+//        if (BuildConfig.DEBUG) {
+//            Firebase.database.useEmulator("10.0.2.2", 9000)
+//            Firebase.auth.useEmulator("10.0.2.2", 9099)
+//            Firebase.storage.useEmulator("10.0.2.2", 9199)
+//        }
 
         // Initialize Firebase Auth and check if the user is signed in
         auth = Firebase.auth

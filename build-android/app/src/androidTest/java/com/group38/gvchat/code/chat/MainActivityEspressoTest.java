@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.firebase.codelab.friendlychat;
+package com.group38.gvchat.code.chat;
 
 import androidx.test.filters.LargeTest;
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner;
