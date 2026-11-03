@@ -1,3 +1,4 @@
+<img width="280" height="277" alt="logo2" src="https://github.com/user-attachments/assets/7059556c-1aa1-4d2c-b132-4d8206eb44cd" />
 # Android mobile app: GV Chat
 
 [![Actions Status][gh-actions-badge]][gh-actions]
