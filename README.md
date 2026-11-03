@@ -1,18 +1,15 @@
-# Firebase Codelab: FriendlyChat
+# Android mobile app: GV Chat
 
 [![Actions Status][gh-actions-badge]][gh-actions]
 
-This is the source code for the Firebase FriendlyChat codelabs. To get started open the codelab instructions:
-
- - [Build FriendlyChat Codelab](https://firebase.google.com/codelabs/firebase-android/)
+This is the source code for the Android mobile app: GV Chat. 
 
 
 ## How to make contributions?
-Please read and follow the steps in the [CONTRIBUTING.md](CONTRIBUTING.md)
+Please read and follow the steps to use the app:
+  1) Launch the app using the latest version of Android studio
+  2) Build an APK file and distribute to android devices for testing
+  3) Alternatively you can launch an emulator on Android studio for testing
 
 
-## License
-See [LICENSE](LICENSE)
 
-[gh-actions]: https://github.com/firebase/codelab-friendlychat-android/actions
-[gh-actions-badge]: https://github.com/firebase/codelab-friendlychat-android/workflows/Android%20CI/badge.svg
