@@ -2,8 +2,6 @@
 
 # Android mobile app: GV Chat
 
-[![Actions Status][gh-actions-badge]][gh-actions]
-
 This is the source code for the Android mobile app: GV Chat. 
 
 
