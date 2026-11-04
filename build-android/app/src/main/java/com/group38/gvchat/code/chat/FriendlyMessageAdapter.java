@@ -1,18 +1,4 @@
-/**
- * Copyright Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+
 package com.group38.gvchat.code.chat;
 
 import android.graphics.Color;
@@ -93,7 +79,8 @@ public class FriendlyMessageAdapter extends FirebaseRecyclerAdapter<FriendlyMess
         }
 
         public void bind(FriendlyMessage item) {
-            binding.messageTextView.setText(item.getText());
+            String decryptedText = EncryptionUtil.decrypt(item.getText());
+            binding.messageTextView.setText(decryptedText);
             setTextColor(item.getName(), binding.messageTextView);
 
             binding.messengerTextView.setText(item.getName() != null ? item.getName() : MainActivity.ANONYMOUS);
@@ -156,10 +143,14 @@ public class FriendlyMessageAdapter extends FirebaseRecyclerAdapter<FriendlyMess
             Glide.with(view.getContext())
                     .load(url)
                     .transform(new CircleCrop())
+                    .placeholder(R.drawable.ic_account_circle_black_36dp)
+                    .error(R.drawable.ic_account_circle_black_36dp)
                     .into(view);
         } else {
             Glide.with(view.getContext())
                     .load(url)
+                    .placeholder(R.drawable.rounded_message_gray)
+                    .error(R.drawable.rounded_message_gray)
                     .into(view);
         }
     }
