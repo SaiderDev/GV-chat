@@ -1,62 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.group38.gvchat.code.chat.MainActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <!-- Main Content View (Chat Window) -->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorLightGray"
-        android:orientation="horizontal"
-        android:paddingHorizontal="10dp">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/addMessageImageView"
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorLightGray"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp">
+
+            <EditText
+                android:id="@+id/messageEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:background="@drawable/edit_text_shadow"
+                android:hint="Say something..."
+                android:inputType="text" />
+
+            <ImageView
+                android:id="@+id/sendButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:enabled="false"
+                android:src="@drawable/outline_send_gray_24" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleLarge"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/messageRecyclerView"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            ads:srcCompat="@drawable/outline_add_photo_alternate_24" />
+            android:layout_above="@+id/linearLayout"
+            android:background="@android:color/white"
+            android:paddingHorizontal="16dp" />
+    </RelativeLayout>
 
-        <EditText
-            android:id="@+id/messageEditText"
-            android:layout_width="0dp"
+    <!-- Left Side Panel (Navigation Drawer) -->
+    <LinearLayout
+        android:id="@+id/leftDrawerContainer"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true">
+
+        <!-- Drawer Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="10dp"
-            android:layout_gravity="center"
-            android:padding="10dp"
-            android:background="@drawable/edit_text_shadow"
-            android:hint="Say something..."
-            android:inputType="text" />
+            android:background="@color/colorPrimary"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <ImageView
-            android:id="@+id/sendButton"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GV News Channels"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select a user to start private chat"
+                android:textColor="@color/colorLightGray"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Global Chat Option -->
+        <LinearLayout
+            android:id="@+id/globalChatOption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_account_circle_black_36dp"
+                android:contentDescription="@string/app_name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GV News"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginStart="16dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGray" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:enabled="false"
-            android:src="@drawable/outline_send_gray_24" />
+            android:text="Users"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorDarkGray"
+            android:layout_margin="12dp" />
+
+        <!-- User List RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/usersRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/messageRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/linearLayout"
-        android:background="@android:color/white"
-        android:paddingHorizontal="16dp" />
-</RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
