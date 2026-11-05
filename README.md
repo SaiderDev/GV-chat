@@ -12,6 +12,15 @@ Please read and follow the steps to use the app:
   3) Build an APK file and distribute to android devices for testing
   4) Alternatively you can launch an emulator on Android studio for testing
 
+## The Demo Presentation :
+
+
+
+
+https://github.com/user-attachments/assets/b6cc87f6-0a01-4eed-ba3f-0423a24683dd
+
+
+
 
 
 
